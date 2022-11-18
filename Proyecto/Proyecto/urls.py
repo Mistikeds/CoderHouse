@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from App_coder.views import ListarPersonas, CargarPersonas, ActualizarPersonas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('personas/', ListarPersonas.as_view()),
+    path('agregar/personas', CargarPersonas.as_view()),
+    path('personas/actualizar', ActualizarPersonas.as_view()),
+    path('personas/actualizar/<int:pk>', ActualizarPersonas.as_view()),
+
+
 ]
